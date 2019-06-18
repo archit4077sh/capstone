@@ -11,11 +11,11 @@
     </div>
   </a>
 </div>
-
+<br>
+<br>
 <div *ngIf="orders">
-
   <h1>Orders</h1>
-  <ul>
+  <ul class = "temp">
   <li *ngFor = "let order of orders">
     Order ID : {{order.id}}
     <ul>
@@ -25,6 +25,24 @@
     </ul>
     <button type="button" name="button" (click) = onClickCancel(order.id)>cancel this order</button>
   </li>
+  </ul>
+</div>
+
+
+<div *ngIf="items">
+    <h1>Menu</h1>
+  <ul class = "temp">
+  <li *ngFor = "let item of items">
+    Item Name : {{item.name}}
+    <br>
+    Image Url : {{ item.imageUrl }}
+    <br>
+    Price : {{ item.price }}
+    <br>
+    Quantity : {{ item.qty }}
+    <button type="button" name="button" (click) = onClickDelete(item)>Delete this item</button>
+  </li>
+
   </ul>
 
 
