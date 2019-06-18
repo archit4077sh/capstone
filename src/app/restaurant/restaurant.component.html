@@ -1,0 +1,31 @@
+
+<div class="grid grid-pad">
+  <a class="col-1-4">
+    <div class="module" (click) = "showOrders()">
+      <h4>View Orders</h4>
+    </div>
+  </a>
+  <a class="col-1-4">
+    <div class="module" (click) = "showMenu()">
+      <h4>View Menu</h4>
+    </div>
+  </a>
+</div>
+
+<div *ngIf="orders">
+
+  <h1>Orders</h1>
+  <ul>
+  <li *ngFor = "let order of orders">
+    Order ID : {{order.id}}
+    <ul>
+    <li *ngFor = "let temp of order.items">
+      Item name : {{temp.name}}
+      </li>
+    </ul>
+    <button type="button" name="button" (click) = onClickCancel(order.id)>cancel this order</button>
+  </li>
+  </ul>
+
+
+</div>
